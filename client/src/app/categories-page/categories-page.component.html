@@ -1,0 +1,42 @@
+
+  <div class="page-title ">
+      <h4>Categories</h4>
+      <button 
+        class="waves-effect waves-light btn grey darken-1"
+        routerLink="/categories/new"
+        >Add Category
+      </button>
+  </div>
+
+  <!-- if statment down below means that if subscribe to the stream -->
+  <!-- and if we retrive some data -> then because it's a strime use async pipe and put the reselt into var caregories-->
+  <!-- witch is active only on this html markup. but if data is loading show app-loader down below -->
+  
+  <div class="row" *ngIf="categories$ | async as categories; else loader">
+      <div class="col s10 offset-s1">
+          <div class="collection" *ngIf="categories.length; else empty">
+            <!-- [routerLink] - cas it's a dinamic value have to bind this router -->
+              <a
+                *ngFor="let category of categories" 
+                
+                [routerLink]="['/categories', category._id]"
+                class="collection-item"
+                ><i class="material-icons">assignment_turned_in</i> <h6>{{category.name}}</h6>
+              </a>
+
+          </div>
+
+          <ng-template #empty>
+            <div class="center">
+              <p>There's no categories yet</p>
+            </div>
+          </ng-template>
+
+      </div>
+  </div>
+
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+
+  

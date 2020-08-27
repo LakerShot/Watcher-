@@ -1,0 +1,18 @@
+.d-flex {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.d-flex h4 {
+  margin: 1.5rem;
+} 
+
+.wrap {
+  height: 100vh;
+}
+
+ul li {
+  border-bottom: 1px solid rgb(90, 90, 90);
+  padding: 0.5rem 1rem;
+}

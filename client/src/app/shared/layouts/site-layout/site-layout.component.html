@@ -1,0 +1,43 @@
+<div class="#f5f5f5 grey lighten-4 wrap">
+
+
+<ul class="sidenav sidenav-fixed a-sidenav grey darken-4 " >
+  <div class="user-view">
+    <div class="d-flex">
+      <h4 class="orange-text text-lighten-2">Watcher</h4>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <li class="bold" *ngFor="let link of links" routerLinkActive="active" >
+    <a [routerLink]="[link.url]" class="waves-effect waves-orange orange-text text-lighten-2">
+      <i class="material-icons orange-text text-lighten-2">{{link.icon}}</i>
+      {{link.name}}
+    </a>
+
+  </li>
+
+  <li class="bold last">
+    <a 
+      href="#" 
+      class="waves-effect waves-orange orange-text text-lighten-2"
+      (click)="logout($event)"
+    >
+    <i class="material-icons orange-text text-lighten-2">undo</i>
+    Log out
+    </a>
+  </li>
+</ul>
+
+<main class="content ">
+  <router-outlet></router-outlet>
+</main>
+
+
+<a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
+
+<div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+    </div>
+</div>
+</div>

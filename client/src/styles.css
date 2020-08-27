@@ -1,0 +1,5 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,300;1,500;1,700&display=swap');
+/* tilda means go to /node_modules/...   Webpack can recognize that sintaxis */
+@import "./theme/styles.min.css";
+

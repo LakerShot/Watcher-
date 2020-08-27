@@ -1,0 +1,12 @@
+.modal {
+  max-width: 500px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex i {
+  font-size: 2rem;
+  padding: 0 .5rem;
+}

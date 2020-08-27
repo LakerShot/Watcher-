@@ -1,0 +1,16 @@
+.mt3 {
+  margin-top: 3rem;
+}
+.btn_castom {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.rounded {
+  border-radius:  30px;
+}
+
+h4 {
+  margin: 0;
+}

@@ -1,0 +1,23 @@
+<div class="main">
+  <h4>Proceeds</h4>
+  <div class="average-price">
+    <p>Average proceeds<strong> {{average}}$</strong></p>
+  </div>
+</div>
+
+<div [style.display]="pending ? 'none' : 'block' " >
+
+  <div class="container">
+    <div class="analytics-block pb3">
+      <h5>Proceeds</h5>
+      <canvas #gain></canvas>
+    </div>
+
+    <div class="analytics-block">
+      <h5>Orders</h5>
+      <canvas #order></canvas>
+    </div>
+  </div>
+</div>
+
+  <app-loader *ngIf="pending"></app-loader>

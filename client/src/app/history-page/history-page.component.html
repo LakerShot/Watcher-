@@ -1,0 +1,56 @@
+<div class="page-title">
+  <h4>Purchase history</h4>
+  <button 
+    class="btn btn-small" 
+    data-tooltip="Open filter"
+    data-position="left"
+    (click)="isFilterVisible = !isFilterVisible"
+    [class.active] = "isFilterVisible"
+    [class.red] = "isFiltred()"
+    #tooltip
+  >
+      <i class="material-icons">sort</i>
+  </button>
+</div>
+
+<app-history-filter 
+  *ngIf="isFilterVisible"
+  (onfilter)="applyFilter($event)"
+></app-history-filter>
+
+<div *ngIf="!reloading; else reloadingBlock">
+  <div *ngIf="orders.length; else empty">
+
+    <app-history-list [orders]="orders"></app-history-list>
+
+    <div
+      class="center mt2"
+      *ngIf="!noMoreOrders"
+      >
+    <button
+      (click)="loadMore()"
+      *ngIf="!loadingAdditionalDate; else loader" 
+      class="btn waves-effect grey darken-1 btn-small"
+    >
+      Load more
+    </button>
+
+    <ng-template #loader>
+      <app-loader></app-loader>
+    </ng-template>
+
+    </div>
+  </div>
+  
+  <ng-template #empty>
+    <div class="center">
+      <p>There's no purchase yet</p>
+    </div>
+  </ng-template>
+
+</div>
+
+
+<ng-template #reloadingBlock>
+  <app-loader></app-loader>
+</ng-template>

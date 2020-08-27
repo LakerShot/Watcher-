@@ -1,0 +1,11 @@
+.display_none {
+  display: none;
+}
+
+.mh500 {
+  max-height: 500px;
+}
+
+.input-field input {
+  font-size: 1.4rem;
+}
